@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mountainBike" class="org.example.MountainBike">
+        <constructor-arg value="Горный велосипед"/>
+    </bean>
+
+    <bean id="kidsBike" class="org.example.KidsBike">
+        <constructor-arg value="Детский велосипед"/>
+    </bean>
+
+    <bean id="bmxBike" class="org.example.BMXBike">
+        <constructor-arg value="BMX велосипед"/>
+    </bean>
+
+    <bean id="bicycleShop" class="org.example.BicycleShop">
+        <constructor-arg ref="bmxBike"/>
+    </bean>
+</beans>
