@@ -3,7 +3,7 @@ package org.example;
 public class BicycleShop {
     private Bicycle bicycle;
 
-    // IoC через конструктор
+
     public BicycleShop(Bicycle bicycle) {
         this.bicycle = bicycle;
     }

@@ -5,17 +5,9 @@
            http://www.springframework.org/schema/beans
            https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="mountainBike" class="org.example.MountainBike">
-        <constructor-arg value="Горный велосипед"/>
-    </bean>
-
-    <bean id="kidsBike" class="org.example.KidsBike">
-        <constructor-arg value="Детский велосипед"/>
-    </bean>
-
-    <bean id="bmxBike" class="org.example.BMXBike">
-        <constructor-arg value="BMX велосипед"/>
-    </bean>
+    <bean id="mountainBike" class="org.example.MountainBike"/>
+    <bean id="kidsBike" class="org.example.KidsBike"/>
+    <bean id="bmxBike" class="org.example.BMXBike"/>
 
     <bean id="bicycleShop" class="org.example.BicycleShop">
         <constructor-arg ref="bmxBike"/>

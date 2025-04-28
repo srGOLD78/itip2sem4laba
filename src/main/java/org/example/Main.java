@@ -7,14 +7,16 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("=== XML Configuration ===");
         ClassPathXmlApplicationContext xmlContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        BicycleShop shopFromXml = xmlContext.getBean("bicycleShop", BicycleShop.class);
-        shopFromXml.showBicycle();
+        Bicycle bicycle = xmlContext.getBean("mountainBike",Bicycle.class);
+        BicycleShop xmlShop = new BicycleShop(bicycle);
+        xmlShop.showBicycle();
         xmlContext.close();
 
         System.out.println("\n=== Annotation Configuration ===");
         AnnotationConfigApplicationContext annotationContext = new AnnotationConfigApplicationContext(SpringConfig.class);
-        BicycleShop shopFromAnnotation = annotationContext.getBean("bicycleShop", BicycleShop.class);
-        shopFromAnnotation.showBicycle();
+        Bicycle annotaionBicycle = annotationContext.getBean("kidsBike", Bicycle.class);
+        BicycleShop annotationShop = new BicycleShop(annotaionBicycle);
+        annotationShop.showBicycle();
         annotationContext.close();
     }
 }

@@ -6,23 +6,18 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringConfig {
 
-    @Bean
+    @Bean(name = "mountainBike")
     public Bicycle mountainBike() {
-        return new MountainBike("Горный велосипед");
+        return new MountainBike();
     }
 
-    @Bean
+    @Bean(name = "kidsBike")
     public Bicycle kidsBike() {
-        return new KidsBike("Детский велосипед");
+        return new KidsBike();
     }
 
-    @Bean
+    @Bean(name = "bmxBike")
     public Bicycle bmxBike() {
-        return new BMXBike("BMX велосипед");
-    }
-
-    @Bean
-    public BicycleShop bicycleShop() {
-        return new BicycleShop(mountainBike());
+        return new BMXBike();
     }
 }
